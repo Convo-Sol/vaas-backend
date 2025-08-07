@@ -1,0 +1,22 @@
+{
+    "name": "vass-webhook",
+    "version": "1.0.0",
+    "main": "index.js",
+    "type": "module",
+    "scripts": {
+        "start": "node index.js"
+    },
+    "dependencies": {
+        "@supabase/supabase-js": "^2.53.0",
+        "axios": "^1.11.0",
+        "axios-retry": "^4.5.0",
+        "body-parser": "^1.20.3",
+        "cors": "^2.8.5",
+        "dotenv": "^16.6.1",
+        "express": "^4.21.2",
+        "fastify": "^5.4.0",
+        "google-auth-library": "^10.2.0",
+        "node-fetch": "^3.3.2",
+        "openai": "^5.11.0"
+    }
+}
