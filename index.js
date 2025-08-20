@@ -121,7 +121,11 @@ app.post("/vapi-webhook", async (req, res) => {
       order,
       quantity,
       business_name,
+<<<<<<< HEAD
+      call_length: transcriptLength,
+=======
       transcriptLength,
+>>>>>>> 148408cbb95b8c2d0acfaa685134d91af8f99546
       raw_transcript,
     };
 
