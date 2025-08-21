@@ -100,9 +100,9 @@ app.post("/vapi-webhook", async (req, res) => {
       .map((m) => `${m.role.toUpperCase()}: ${m.message || m.content || ""}`)
       .join("\n");
 
-    const transcriptLength = raw_transcript.length;
+    const durationMinutes = payload.message?.durationMinutes || 0;
 
-    console.log("📜 Raw transcript length:", transcriptLength);
+    console.log("⏱️ Call duration from VAPI:", durationMinutes, "minutes");
     console.log("🔍 Extracting structured data from transcript...");
 
     const { caller_name, phone_number, order, quantity } =
@@ -121,7 +121,7 @@ app.post("/vapi-webhook", async (req, res) => {
       order,
       quantity,
       business_name,
-      call_length: transcriptLength,
+      call_length: durationMinutes,
       raw_transcript,
     };
 
@@ -148,4 +148,6 @@ app.get("/", (req, res) => {
 app.listen(port, () => {
   console.log(`🚀 Server listening at http://localhost:${port}`);
 });
+
+
 
